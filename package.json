@@ -1,0 +1,22 @@
+{
+  "name": "f-react",
+  "version": "1.0.0",
+  "description": "This is  react By Sagar Singh",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/sagarkataria/f-react.git)"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "Sagar Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
