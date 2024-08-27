@@ -22,12 +22,15 @@ const Header = () => {
 const RestaurantCard = () => {
     return (
 
-        <div className='res-card'>
-            <figure class="snip1159">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample2.jpg" alt="sq-sample2" />
-                <div><i class="ion-ios-download-outline"></i></div>
-                <a href="#"></a>
-            </figure>
+        <div className='res-card' style={{ backgroundColor:"#f0f0f0" }}>
+        <img 
+        className='res-logo'
+         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/8/9/4373cf41-dc90-45b2-970a-0b16e4e3836c_570254.jpg"
+          alt=""/>
+          <div className=''>
+            <h3>Meghana food</h3>
+            <h4>Biryani ,North Indian,</h4>
+          </div>
         </div>
     )
 }
@@ -39,6 +42,16 @@ const Body = () => {
                 Search
             </div>
             <div className='res-container'>
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
                 <RestaurantCard />
             </div>
         </div>
