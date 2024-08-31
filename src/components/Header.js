@@ -1,9 +1,9 @@
-import { CDN_URL } from "../utilits/constant";
+import { LOGO_URL } from "../utils/constant.js";
 const Header = () => {
     return (
         <div className='header'>
             <div>
-                <img className='logo' src={CDN_URL} alt="" />
+                <img className='logo' src={LOGO_URL} alt="logo" />
             </div>
             <div className='nav-items'>
                 <ul>

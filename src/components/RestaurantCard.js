@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utilits/constant.js";
+import { CDN_URL } from "../utils/constant.js";
 const RestaurantCard = (props) => {
     const { resData } = props;
     // console.log(resData)
