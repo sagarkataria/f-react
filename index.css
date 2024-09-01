@@ -38,10 +38,14 @@
 .res-logo{
     width: 100%;
 }
+.filter{
+    display: flex;
+}
 .filter-btn{
-    padding: 10px;
-    margin: 6px;
+    /* padding: 10px; */
+    margin: 10px;
     cursor: pointer;
+    /* height: 20px; */
 }
 .shimmer-container{
     display: flex;
