@@ -7,6 +7,7 @@ import Shimmer from "./Shimmer.js";
 const Body = () => {
     const [listOfRestautant, setListOfRestaurant] = useState([])
     const [searchText,setSearchText] = useState("");
+    console.log(searchText)
     useEffect(() => {
         fetchData();
     }, []);
@@ -14,7 +15,7 @@ const Body = () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
 
         const json = await data.json();
-        console.log()
+        console.log(json)
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     return listOfRestautant.length === 0 ? <Shimmer /> : (
@@ -27,7 +28,13 @@ const Body = () => {
                      }}
                      />  
                      <button className="search-btn"
-                     
+                     onClick={()=>{
+                        const filterRestaurant = listOfRestautant.filter((res)=>{
+                           return res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        });
+                        // console.log('after render'+listOfRestautant)
+                        setListOfRestaurant(filterRestaurant);
+                     }}
                      >
                      search
                      </button>
