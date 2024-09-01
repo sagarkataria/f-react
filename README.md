@@ -9,6 +9,8 @@
   - npm install react-dom
 - Now we can execute our react project using parcel bundler 
   - npx parcel index.html
+- React Router
+  - Install -> npm i react-router-dom
 
 
   #parcel
@@ -48,3 +50,5 @@ run a command -> npx parcel build index.html
 
 8 -> now you have to tell your project that what all browser should your app to support
 change in composer.json and configure "browserList"
+
+

@@ -15,12 +15,12 @@ const Header = () => {
                     <li>Cart</li>
                     <li>
                         <button
-                        className="login"
-                        onClick={()=>{
-                            btnLogin==='Login'?  setBtnLogin('Logout'):setBtnLogin('Login')
-                        }}
+                            className="login"
+                            onClick={() => {
+                                btnLogin === 'Login' ? setBtnLogin('Logout') : setBtnLogin('Login')
+                            }}
                         >
-                          {btnLogin}
+                            {btnLogin}
                         </button>
                     </li>
                 </ul>
