@@ -3,20 +3,18 @@ import User from "./User.js"
 import UserClass from "./UserClass.js"
 
 
-class About extends Component{
-    constructor(props){
+class About extends Component {
+    constructor(props) {
         super(props);
-        console.log('Parent Constructor')
     }
-    componentDidMount(){
-        console.log('Parent Component did mount')
+    componentDidMount() {
     }
-    render(){
+    render() {
         console.log('parent render')
-        return(
+        return (
             <div className="about">
                 <h1>About Us</h1>
-                <UserClass name={"Sagar Singh (Class)"} location={"Najibabad"}/>
+                <UserClass name={"Sagar Singh (Class)"} location={"Najibabad"} />
             </div>
         )
     }
