@@ -3,24 +3,13 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import useBody from "../utils/useBody.js";
 
 
 const Body = () => {
-    const [listOfRestautant, setListOfRestaurant] = useState([])
-    const [filterRestaurant, setFilterRestaurant] = useState([]);
-    const [searchText, setSearchText] = useState("");
-    useEffect(() => {
-        fetchData();
-    }, []);
-    const fetchData = async () => {
-        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-
-        const json = await data.json();
-        console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilterRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    }
+   
     const onlineStatus = useOnlineStatus();
+    const { listOfRestaurant, filterRestaurant, searchText, setSearchText } = useBody();
     if (onlineStatus === false) {
         return <h1>Looks like your internet is disconnect!</h1>
     }
