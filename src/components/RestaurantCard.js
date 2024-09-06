@@ -7,9 +7,9 @@ const RestaurantCard = (props) => {
     // console.log(resData)
     return (
 
-        <div className='res-card' style={{ backgroundColor: "#f0f0f0" }}>
+        <div className='res-card p-4 m-4 w-[250px]' style={{ backgroundColor: "#f0f0f0" }}>
             <img
-                className='res-logo'
+                className=''
                 src={CDN_URL + cloudinaryImageId}
                 alt="image" />
             <div className=''>
