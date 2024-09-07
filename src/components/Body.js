@@ -1,12 +1,16 @@
-import RestaurantCard from "./RestaurantCard.js"
-import { useEffect, useState } from "react";
+import RestaurantCard, {withPromotedLabel}from "./RestaurantCard.js"
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import useBody from "../utils/useBody.js";
+import { withPromotedLabel } from "./RestaurantCard.js";
+
 
 
 const Body = () => {
+    // console.log(RestaurantCard);
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
    
     const onlineStatus = useOnlineStatus();
     const { listOfRestautant, filterRestaurant, searchText, setSearchText,setFilterRestaurant } = useBody();
