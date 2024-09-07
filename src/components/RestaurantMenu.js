@@ -16,16 +16,13 @@ const RestaurantMenu = () => {
 
     const categories = categoriesArray.filter(c => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
-    console.log(categories)
 
-
-    // // console.log(menuData?.data?.card[4])
     return menuData === null ? (<Shimmer />) : (
         <div className="w-[50%] m-auto justify-start mt-3 ">
-            <h1 className="text-2xl font-bold">{text} {}</h1>
+            <h1 className="text-2xl font-bold">{text} { }</h1>
 
             {categories.map((category) => (
-                <RestaurantCategory data = {category?.card?.card}/>
+                <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card} />
             ))}
 
         </div>
