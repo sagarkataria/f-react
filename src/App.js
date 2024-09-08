@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header.js';
 import Body from './components/Body.js';
@@ -7,6 +7,7 @@ import About from './components/About.js';
 import ContactUs from './components/ContactUs.js';
 import Error from './components/Error.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
+import UserContext from './utils/UserContext.js';
 
 
 // Chunking
@@ -17,14 +18,25 @@ import RestaurantMenu from './components/RestaurantMenu.js';
 // dynamic import
 
 const Grocery = lazy(() => import('./components/Grocery'))
-const About = lazy(()=>import('./components/About'))
+const About = lazy(() => import('./components/About'))
+
+
 
 const AppLayout = () => {
+    const [userName, setUserName] = useState();
+    useEffect(() => {
+        const data = {
+            name: "Sagar Singh",
+        }
+        setUserName(data.name)
+    }, [])
     return (
-        <div className='app'>
-            <Header />
-            <Outlet />
-        </div>
+        <UserContext.Provider value={{ loggedInUser: userName }}>
+            <div className='app'>
+                <Header />
+                <Outlet />
+            </div>
+        </UserContext.Provider>
     )
 }
 
