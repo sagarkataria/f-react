@@ -8,6 +8,8 @@ import ContactUs from './components/ContactUs.js';
 import Error from './components/Error.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
 import UserContext from './utils/UserContext.js';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore.js';
 
 
 // Chunking
@@ -31,12 +33,14 @@ const AppLayout = () => {
         setUserName(data.name)
     }, [])
     return (
-        <UserContext.Provider value={{ loggedInUser: userName }}>
-            <div className='app'>
-                <Header />
-                <Outlet />
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: userName }}>
+                <div className='app'>
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }
 

@@ -52,3 +52,10 @@ run a command -> npx parcel build index.html
 change in composer.json and configure "browserList"
 
 
+# Redux Toolkit
+  - install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect our store to our app
+  - Slice (cartSlice)
+  - dispatch(action)
+  - Selector
