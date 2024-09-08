@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { CDN_URL } from "../utils/constant";
 const ItemList = ({ data }) => {
-    console.log(data)
+
     return (
         <div>
             {data.map((item) => (

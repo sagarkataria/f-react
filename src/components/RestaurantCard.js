@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constant.js";
 import { FaStar } from "react-icons/fa";
+import UserContext from "../utils/UserContext.js";
 const RestaurantCard = (props) => {
     const { resData } = props;
-    // console.log(resData)
+
     const { name, cuisines, costForTwo, areaName, cloudinaryImageId, avgRatingString
     } = resData?.info;
-    // console.log(resData)
+
+    const { loggedInUser } = useContext(UserContext)
+
     return (
 
         <div className='res-card p-2 m-2 w-[230px] h-80 gap-4 rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-110' style={{ backgroundColor: "#f0f0f0" }}>
@@ -21,6 +25,7 @@ const RestaurantCard = (props) => {
                 </div>
                 <h4 className="text-sm truncate text-gray-700 mt-2">{cuisines.join(', ')}</h4>
                 <h4 className="text-sm truncate text-gray-700 mt-2">{areaName}</h4>
+                <h2>{loggedInUser}</h2>
             </div>
         </div>
     )
@@ -31,7 +36,7 @@ const RestaurantCard = (props) => {
 
 // input - RestaurantCard ===>RestaurantCardPramoted
 
- export const withPromotedLabel = (RestaurantCard) => {
+export const withPromotedLabel = (RestaurantCard) => {
     return () => {
         return (
             <>
