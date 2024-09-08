@@ -2,10 +2,9 @@ import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import ItemList from "./ItemList.js";
 import { useState } from "react";
 
-const RestaurantCategory = ({ data }) => {
-    const [showItem, setShowItem] = useState(false);
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
     const handleClick = () => {
-        setShowItem(!showItem);
+        setShowIndex();
     }
     return (
         <div>
@@ -14,7 +13,7 @@ const RestaurantCategory = ({ data }) => {
                     <span className="font-bold text-4lg">{data.title} ({data.itemCards.length})</span>
                     <span className=""><FaRegArrowAltCircleUp size={25} clas /></span>
                 </div>
-                {showItem && <ItemList data={data.itemCards} />}
+                {showItems && <ItemList data={data.itemCards} />}
             </div>
         </div>
     )
