@@ -8,10 +8,9 @@ const RestaurantMenu = () => {
     const { resId } = useParams();
     const menuData = useRestaurantMenu(resId);
 
-    const [showIndex, setShowIndex] = useState(1);
+    const [showIndex, setShowIndex] = useState();
     // {name} = menuData;
     // console.log(menuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
-    console.log(showIndex)
 
     const categoriesArray = menuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
 

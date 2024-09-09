@@ -10,6 +10,7 @@ import RestaurantMenu from './components/RestaurantMenu.js';
 import UserContext from './utils/UserContext.js';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore.js';
+import Cart from './components/Cart.js';
 
 
 // Chunking
@@ -68,6 +69,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurant/:resId",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ],
         errorElement: <Error />

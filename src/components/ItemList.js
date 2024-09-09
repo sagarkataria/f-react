@@ -1,7 +1,14 @@
 import { FaStar } from "react-icons/fa";
 import { CDN_URL } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 const ItemList = ({ data }) => {
 
+    const dispatch = useDispatch();
+    const handleItems = (item) => {
+        // dispatch and action
+        dispatch(addItem(item))
+    }
     return (
         <div>
             {data.map((item) => (
@@ -22,7 +29,9 @@ const ItemList = ({ data }) => {
                     <div className="w-3/12">
                         <div className="relative">
                             <img src={CDN_URL + item.card.info?.imageId} alt="Image" className=" w-full h-[120px] object-cover" />
-                            <button className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 bg-white text-black py-2 px-4 rounded-lg shadow-lg">
+                            <button className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 bg-white text-black py-2 px-4 rounded-lg shadow-lg"
+                                onClick={() => handleItems(item)}
+                            >
                                 +Add
                             </button>
                         </div>
